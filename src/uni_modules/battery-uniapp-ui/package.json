@@ -1,0 +1,37 @@
+{
+    "id": "battery-uniapp-ui",
+    "displayName": "Battery UniApp UI",
+    "version": "0.1.0",
+    "description": "基于 Vue 3 + TypeScript 的 uni-app 组件库，兼容 H5 和微信小程序",
+    "keywords": [
+        "uni-app",
+        "vue3",
+        "typescript",
+        "component-library"
+    ],
+    "uni_modules": {
+        "dependencies": [],
+        "platforms": {
+            "cloud": {
+                "tcb": "y",
+                "aliyun": "y"
+            },
+            "client": {
+                "Vue": {
+                    "vue3": "y"
+                },
+                "App": {
+                    "app-vue": "y"
+                },
+                "H5-mobile": {
+                    "Safari": "y",
+                    "Android Browser": "y",
+                    "WeChat Browser": "y"
+                },
+                "MP-WEIXIN": {
+                    "mp-weixin": "y"
+                }
+            }
+        }
+    }
+}

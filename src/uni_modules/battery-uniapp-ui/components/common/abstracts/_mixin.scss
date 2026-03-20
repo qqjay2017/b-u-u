@@ -1,0 +1,32 @@
+@import './config';
+
+// Block
+@mixin b($block) {
+  $B: #{$namespace}-#{$block};
+  .#{$B} {
+    @content;
+  }
+}
+
+// Element
+@mixin e($element) {
+  $E: #{$elementSeparator}#{$element};
+  &#{$E} {
+    @content;
+  }
+}
+
+// Modifier
+@mixin m($modifier) {
+  $M: #{$modifierSeparator}#{$modifier};
+  &#{$M} {
+    @content;
+  }
+}
+
+// State
+@mixin when($state) {
+  &.#{$state-prefix}#{$state} {
+    @content;
+  }
+}

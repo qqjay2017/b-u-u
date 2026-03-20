@@ -1,0 +1,56 @@
+// ============================================================
+// Battery UI 主题变量
+// 使用 CSS 自定义属性，支持运行时主题切换
+// ============================================================
+
+// ---------- 基础色彩 ----------
+$-color-theme: var(--bt-color-theme, #4d80f0) !default;
+$-color-success: var(--bt-color-success, #34d19d) !default;
+$-color-warning: var(--bt-color-warning, #f0883a) !default;
+$-color-danger: var(--bt-color-danger, #fa4350) !default;
+$-color-info: var(--bt-color-info, #909399) !default;
+$-color-white: var(--bt-color-white, #ffffff) !default;
+$-color-black: var(--bt-color-black, #000000) !default;
+
+// ---------- 文字色彩 ----------
+$-color-text: var(--bt-color-text, #333333) !default;
+$-color-text-secondary: var(--bt-color-text-secondary, #666666) !default;
+$-color-text-placeholder: var(--bt-color-text-placeholder, #999999) !default;
+
+// ---------- 边框 & 背景 ----------
+$-color-border: var(--bt-color-border, #e5e6eb) !default;
+$-color-bg: var(--bt-color-bg, #f5f5f5) !default;
+
+// ---------- 字体大小 ----------
+$-fs-small: var(--bt-fs-small, 24rpx) !default;
+$-fs-medium: var(--bt-fs-medium, 28rpx) !default;
+$-fs-large: var(--bt-fs-large, 32rpx) !default;
+
+// ---------- 圆角 ----------
+$-radius-small: var(--bt-radius-small, 6rpx) !default;
+$-radius-medium: var(--bt-radius-medium, 8rpx) !default;
+$-radius-large: var(--bt-radius-large, 12rpx) !default;
+$-radius-round: var(--bt-radius-round, 999px) !default;
+
+// ============================================================
+// Button 组件变量
+// ============================================================
+$-button-height-small: var(--bt-button-height-small, 56rpx) !default;
+$-button-height-medium: var(--bt-button-height-medium, 72rpx) !default;
+$-button-height-large: var(--bt-button-height-large, 88rpx) !default;
+
+$-button-padding-small: var(--bt-button-padding-small, 0 20rpx) !default;
+$-button-padding-medium: var(--bt-button-padding-medium, 0 28rpx) !default;
+$-button-padding-large: var(--bt-button-padding-large, 0 36rpx) !default;
+
+$-button-fs-small: var(--bt-button-fs-small, 24rpx) !default;
+$-button-fs-medium: var(--bt-button-fs-medium, 28rpx) !default;
+$-button-fs-large: var(--bt-button-fs-large, 32rpx) !default;
+
+$-button-radius: var(--bt-button-radius, 8rpx) !default;
+
+$-button-default-bg: var(--bt-button-default-bg, #f5f5f5) !default;
+$-button-default-color: var(--bt-button-default-color, #333333) !default;
+$-button-default-border-color: var(--bt-button-default-border-color, #e5e6eb) !default;
+
+$-button-disabled-opacity: var(--bt-button-disabled-opacity, 0.5) !default;

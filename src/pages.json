@@ -1,0 +1,29 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^bt-(.*)": "@/uni_modules/battery-uniapp-ui/components/bt-$1/bt-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index",
+      "type": "home",
+      "style": {
+        "navigationBarTitleText": "Battery UI"
+      }
+    },
+    {
+      "path": "pages/button/index",
+      "style": {
+        "navigationBarTitleText": "Button 按钮"
+      }
+    }
+  ],
+  "globalStyle": {
+    "backgroundColor": "#f5f5f5",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Battery UI"
+  }
+}
