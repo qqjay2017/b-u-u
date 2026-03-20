@@ -5,14 +5,18 @@
 /* ---------- 侧边栏宽度收窄 ---------- */
 :root {
   --vp-sidebar-width: 200px;
+  
 }
-
+.aside-container,
+.aside {
+    max-width: 200px!important;
+  }
 /* ---------- 手机壳 ---------- */
 .phone-preview {
   position: sticky;
   top: calc(var(--vp-nav-height) + 56px);
   flex-shrink: 0;
-  width: 300px;
+  width: 375px;
   z-index: 10;
 }
 .phone-shell__header {
@@ -24,7 +28,7 @@
   flex-shrink: 0;
 }
 .phone-shell {
-  width: 300px;
+  width: 375px;
   border: 3px solid #e5e5e5;
   border-radius: 44px;
   background: #fff;
@@ -87,16 +91,16 @@
 
 /* VitePress 默认 VPContent 布局 — 给右侧预览腾出空间 */
 .has-phone-preview .VPContent.has-sidebar {
-  padding-right: 400px;
+  padding-right:340px;
 }
 
 /* 手机预览定位到右侧 */
 .has-phone-preview .phone-preview-container {
   position: fixed;
   top: calc( var(--vp-nav-height) + 20px );
-  right: 16px;
+  right: 24px;
   bottom: 0;
-  width: 400px;
+  width: 375px;
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -19,7 +19,10 @@ export default defineConfig({
       '/guide/': [
         {
           text: '指南',
-          items: [{ text: '快速上手', link: '/guide/' }],
+          items: [
+            { text: '快速上手', link: '/guide/' },
+            { text: '组件预览配置', link: '/guide/preview' },
+          ],
         },
       ],
       '/component/': [
