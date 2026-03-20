@@ -2,5 +2,8 @@
   "files.associations": {
     "pages.json": "jsonc",
     "manifest.json": "jsonc"
-  }
+  },
+  "cSpell.words": [
+    "uniapp"
+  ]
 }

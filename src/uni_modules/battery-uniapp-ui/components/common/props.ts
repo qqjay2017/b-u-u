@@ -2,10 +2,12 @@ import type { PropType } from "vue";
 
 /** 所有组件共享的基础 props */
 export const baseProps = {
+  /** 自定义类名 */
   customClass: {
     type: String,
     default: "",
   },
+  /** 自定义样式 */
   customStyle: {
     type: String,
     default: "",

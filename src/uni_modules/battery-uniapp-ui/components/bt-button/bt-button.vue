@@ -10,6 +10,7 @@
       <view class="bt-button__loading-icon" />
     </view>
     <view class="bt-button__text">
+      <!-- @slot default 按钮内容 -->
       <slot />
     </view>
   </button>
@@ -21,6 +22,7 @@ import { buttonProps } from "./types";
 
 const props = defineProps(buttonProps);
 const emit = defineEmits<{
+  /** 点击按钮时触发 */
   click: [event: Event];
 }>();
 

@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { apiDocPlugin } from './plugins/api-doc'
 
 export default defineConfig({
   title: 'Battery UI',
@@ -8,6 +9,7 @@ export default defineConfig({
       port: 5174,
       strictPort: true,
     },
+    plugins: [apiDocPlugin()],
   },
   themeConfig: {
     simulatorUrl: 'http://localhost:5173',
@@ -22,6 +24,7 @@ export default defineConfig({
           items: [
             { text: '快速上手', link: '/guide/' },
             { text: '组件预览配置', link: '/guide/preview' },
+            { text: '组件文档生成', link: '/guide/api-doc' },
           ],
         },
       ],

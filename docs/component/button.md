@@ -70,31 +70,7 @@
 
 ## API
 
-### Props
-
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| type | 按钮类型 | `'primary' \| 'success' \| 'warning' \| 'danger' \| 'info' \| 'default'` | `'default'` |
-| size | 按钮尺寸 | `'small' \| 'medium' \| 'large'` | `'medium'` |
-| plain | 是否为朴素按钮 | `boolean` | `false` |
-| round | 是否为圆角按钮 | `boolean` | `false` |
-| disabled | 是否禁用 | `boolean` | `false` |
-| block | 是否为块级按钮 | `boolean` | `false` |
-| loading | 是否为加载状态 | `boolean` | `false` |
-| customClass | 自定义类名 | `string` | `''` |
-| customStyle | 自定义样式 | `string` | `''` |
-
-### Events
-
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| click | 点击按钮时触发 | `event: Event` |
-
-### Slots
-
-| 名称 | 说明 |
-| --- | --- |
-| default | 按钮内容 |
+<ApiDoc component="bt-button" />
 
 ## 主题变量
 
