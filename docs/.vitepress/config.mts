@@ -1,18 +1,30 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
 import { apiDocPlugin } from './plugins/api-doc'
+
+declare module 'vitepress' {
+  namespace DefaultTheme {
+    interface Config {
+      simulatorUrl?: string
+    }
+  }
+}
+
+const isProd = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   title: 'Battery UI',
   description: '基于 Vue 3 + TypeScript 的 uni-app 组件库',
+  outDir: '../dist',
   vite: {
     server: {
       port: 5174,
       strictPort: true,
     },
-    plugins: [apiDocPlugin()],
+    plugins: [apiDocPlugin() as any],
   },
+
   themeConfig: {
-    simulatorUrl: 'http://localhost:5173',
+    simulatorUrl: isProd ? '/h5' : 'http://localhost:5173',
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '组件', link: '/component/button' },
