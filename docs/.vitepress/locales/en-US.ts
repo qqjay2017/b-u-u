@@ -18,8 +18,8 @@ export default defineConfig({
         items: [
           {
             text: 'AI Assistant',
-            link: '/en-US/guide/ai',
-          },
+            link: '/en-US/guide/ai'
+          }
         ]
       },
       {
@@ -28,24 +28,24 @@ export default defineConfig({
         items: [
           {
             text: 'Basic Components',
-            link: '/en-US/component/button',
+            link: '/en-US/component/button'
           }
         ]
       },
-      { text: '🥤Buy Me a Coffee', link: '/en-US/reward/reward', activeMatch: '/reward/' },
+      { text: '🥤Buy Me a Coffee', link: '/en-US/reward/reward', activeMatch: '/reward/' }
     ],
     sidebar: {
       '/en-US/guide/': [
         {
           text: 'AI Assistant',
-          link: '/en-US/guide/ai',
-        },
+          link: '/en-US/guide/ai'
+        }
       ],
       '/en-US/reward/': [
         {
           text: '🥤Buy Me a Coffee',
-          link: '/en-US/reward/reward',
-        },
+          link: '/en-US/reward/reward'
+        }
       ],
       '/en-US/component/': [
         {
@@ -55,6 +55,10 @@ export default defineConfig({
             {
               link: '/en-US/component/button',
               text: 'Button'
+            },
+            {
+              link: '/en-US/component/tag',
+              text: 'Tag'
             }
           ]
         },

@@ -49,6 +49,10 @@ const list = computed(() => [
       {
         id: 'button',
         name: '按钮'
+      },
+      {
+        id: 'tag',
+        name: '标签'
       }
     ]
   },

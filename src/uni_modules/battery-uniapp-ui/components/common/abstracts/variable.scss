@@ -164,3 +164,48 @@ $-tabs-line-radius: var(--bt-tabs-line-radius, 6rpx) !default;
 $-tabs-pills-bg: var(--bt-color-theme, #4d80f0) !default;
 $-tabs-pills-radius: var(--bt-tabs-pills-radius, 10rpx) !default;
 $-tabs-disabled-opacity: var(--bt-tabs-disabled-opacity, 0.5) !default;
+
+// ============================================================
+// Tag 组件变量
+// ============================================================
+$-tag-line-height: var(--bt-tag-line-height, 1.2) !default;
+$-tag-font-weight: var(--bt-tag-font-weight, 400) !default;
+$-tag-radius: var(--bt-tag-radius, 4px) !default;
+$-tag-small-radius: var(--bt-tag-small-radius, 3px) !default;
+$-tag-mini-radius: var(--bt-tag-mini-radius, 3px) !default;
+$-tag-circle-radius: var(--bt-tag-circle-radius, 999px) !default;
+$-tag-disabled-opacity: var(--bt-tag-disabled-opacity, 0.5) !default;
+
+$-tag-medium-padding: var(--bt-tag-medium-padding, 4px 7px) !default;
+$-tag-small-padding: var(--bt-tag-small-padding, 2px 5px) !default;
+$-tag-mini-padding: var(--bt-tag-mini-padding, 1px 3px) !default;
+$-tag-medium-fs: var(--bt-tag-medium-fs, 12px) !default;
+$-tag-small-fs: var(--bt-tag-small-fs, 12px) !default;
+$-tag-mini-fs: var(--bt-tag-mini-fs, 12px) !default;
+
+$-tag-default-color: var(--bt-tag-default-color, $-color-white) !default;
+$-tag-default-bg: var(--bt-tag-default-bg, $-color-info) !default;
+$-tag-default-border-color: var(--bt-tag-default-border-color, $-color-info) !default;
+$-tag-default-inverted-color: var(--bt-tag-default-inverted-color, $-color-info) !default;
+
+$-tag-primary-color: var(--bt-tag-primary-color, $-color-white) !default;
+$-tag-primary-bg: var(--bt-tag-primary-bg, $-color-theme) !default;
+$-tag-primary-border-color: var(--bt-tag-primary-border-color, $-color-theme) !default;
+$-tag-primary-inverted-color: var(--bt-tag-primary-inverted-color, $-color-theme) !default;
+
+$-tag-success-color: var(--bt-tag-success-color, $-color-white) !default;
+$-tag-success-bg: var(--bt-tag-success-bg, $-color-success) !default;
+$-tag-success-border-color: var(--bt-tag-success-border-color, $-color-success) !default;
+$-tag-success-inverted-color: var(--bt-tag-success-inverted-color, $-color-success) !default;
+
+$-tag-warning-color: var(--bt-tag-warning-color, $-color-white) !default;
+$-tag-warning-bg: var(--bt-tag-warning-bg, $-color-warning) !default;
+$-tag-warning-border-color: var(--bt-tag-warning-border-color, $-color-warning) !default;
+$-tag-warning-inverted-color: var(--bt-tag-warning-inverted-color, $-color-warning) !default;
+
+$-tag-error-color: var(--bt-tag-error-color, $-color-white) !default;
+$-tag-error-bg: var(--bt-tag-error-bg, $-color-danger) !default;
+$-tag-error-border-color: var(--bt-tag-error-border-color, $-color-danger) !default;
+$-tag-error-inverted-color: var(--bt-tag-error-inverted-color, $-color-danger) !default;
+
+$-tag-inverted-bg: var(--bt-tag-inverted-bg, transparent) !default;

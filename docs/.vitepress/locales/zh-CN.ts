@@ -18,8 +18,8 @@ export default defineConfig({
         items: [
           {
             text: 'AI',
-            link: '/guide/ai',
-          },
+            link: '/guide/ai'
+          }
         ]
       },
       {
@@ -28,24 +28,24 @@ export default defineConfig({
         items: [
           {
             text: '基础组件',
-            link: '/component/button',
+            link: '/component/button'
           }
         ]
       },
-      { text: '🥤一杯咖啡', link: '/reward/reward', activeMatch: '/reward/' },
+      { text: '🥤一杯咖啡', link: '/reward/reward', activeMatch: '/reward/' }
     ],
     sidebar: {
       '/guide/': [
         {
           text: 'AI',
-          link: '/guide/ai',
-        },
+          link: '/guide/ai'
+        }
       ],
       '/reward/': [
         {
           text: '🥤一杯咖啡',
-          link: '/reward/reward',
-        },
+          link: '/reward/reward'
+        }
       ],
       '/component/': [
         {
@@ -55,6 +55,10 @@ export default defineConfig({
             {
               link: '/component/button',
               text: 'Button 按钮'
+            },
+            {
+              link: '/component/tag',
+              text: 'Tag 标签'
             }
           ]
         },

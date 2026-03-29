@@ -3,6 +3,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BtButton: typeof import('./components/bt-button/bt-button.vue')['default']
     BtPopup: typeof import('./components/bt-popup/bt-popup.vue')['default']
+    BtTag: typeof import('./components/bt-tag/bt-tag.vue')['default']
     BtTabs: typeof import('./components/bt-tabs/bt-tabs.vue')['default']
     BtVehicleInput: typeof import('./components/bt-vehicle-input/bt-vehicle-input.vue')['default']
     BtVehicleKeyboard: typeof import('./components/bt-vehicle-keyboard/bt-vehicle-keyboard.vue')['default']

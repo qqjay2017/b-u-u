@@ -1,0 +1,116 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+@include b(tag) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  line-height: $-tag-line-height;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: $-tag-radius;
+  padding: $-tag-medium-padding;
+  font-size: $-tag-medium-fs;
+  font-weight: $-tag-font-weight;
+  color: $-tag-default-color;
+  background: $-tag-default-bg;
+  border-color: $-tag-default-border-color;
+  transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+  /* #ifdef H5 */
+  cursor: pointer;
+  /* #endif */
+
+  @include when(small) {
+    padding: $-tag-small-padding;
+    font-size: $-tag-small-fs;
+    border-radius: $-tag-small-radius;
+  }
+
+  @include when(medium) {
+    padding: $-tag-medium-padding;
+    font-size: $-tag-medium-fs;
+  }
+
+  @include when(mini) {
+    padding: $-tag-mini-padding;
+    font-size: $-tag-mini-fs;
+    border-radius: $-tag-mini-radius;
+  }
+
+  @include when(primary) {
+    color: $-tag-primary-color;
+    background: $-tag-primary-bg;
+    border-color: $-tag-primary-border-color;
+  }
+
+  @include when(success) {
+    color: $-tag-success-color;
+    background: $-tag-success-bg;
+    border-color: $-tag-success-border-color;
+  }
+
+  @include when(warning) {
+    color: $-tag-warning-color;
+    background: $-tag-warning-bg;
+    border-color: $-tag-warning-border-color;
+  }
+
+  @include when(error) {
+    color: $-tag-error-color;
+    background: $-tag-error-bg;
+    border-color: $-tag-error-border-color;
+  }
+
+  @include when(inverted) {
+    background: $-tag-inverted-bg;
+  }
+
+  &.is-inverted.is-default {
+    color: $-tag-default-inverted-color;
+    border-color: $-tag-default-border-color;
+  }
+
+  &.is-inverted.is-primary {
+    color: $-tag-primary-inverted-color;
+    border-color: $-tag-primary-border-color;
+  }
+
+  &.is-inverted.is-success {
+    color: $-tag-success-inverted-color;
+    border-color: $-tag-success-border-color;
+  }
+
+  &.is-inverted.is-warning {
+    color: $-tag-warning-inverted-color;
+    border-color: $-tag-warning-border-color;
+  }
+
+  &.is-inverted.is-error {
+    color: $-tag-error-inverted-color;
+    border-color: $-tag-error-border-color;
+  }
+
+  @include when(circle) {
+    border-radius: $-tag-circle-radius;
+  }
+
+  @include when(mark) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: $-tag-circle-radius;
+    border-bottom-right-radius: $-tag-circle-radius;
+  }
+
+  @include when(disabled) {
+    opacity: $-tag-disabled-opacity;
+
+    /* #ifdef H5 */
+    cursor: not-allowed;
+    /* #endif */
+  }
+}

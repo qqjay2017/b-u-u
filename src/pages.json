@@ -51,6 +51,21 @@
           }
         },
         {
+          "path": "tag/Index",
+          "name": "tag",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            // #ifdef MP
+            "navigationBarTitleText": "Tag 标签",
+            // #endif
+            // #ifndef MP
+            "navigationBarTitleText": "%tag-title%"
+            // #endif
+          }
+        },
+        {
           "path": "popup/Index",
           "name": "popup",
           "style": {
