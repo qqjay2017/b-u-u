@@ -166,6 +166,52 @@ $-tabs-pills-radius: var(--bt-tabs-pills-radius, 10rpx) !default;
 $-tabs-disabled-opacity: var(--bt-tabs-disabled-opacity, 0.5) !default;
 
 // ============================================================
+// Group 组件变量
+// ============================================================
+$-group-bg: var(--bt-group-bg, #ffffff) !default;
+$-group-radius: var(--bt-group-radius, 0) !default;
+$-group-header-bg: var(--bt-group-header-bg, #f7f8fa) !default;
+$-group-header-padding: var(--bt-group-header-padding, 12px 16px) !default;
+$-group-header-min-height: var(--bt-group-header-min-height, 44px) !default;
+$-group-title-fs: var(--bt-group-title-fs, 14px) !default;
+$-group-title-fw: var(--bt-group-title-fw, 500) !default;
+$-group-title-color: var(--bt-group-title-color, #333333) !default;
+$-group-right-fs: var(--bt-group-right-fs, 13px) !default;
+$-group-right-color: var(--bt-group-right-color, #999999) !default;
+$-group-divider-color: var(--bt-group-divider-color, #ebedf0) !default;
+$-group-content-padding: var(--bt-group-content-padding, 16px) !default;
+$-group-content-color: var(--bt-group-content-color, #333333) !default;
+$-group-content-fs: var(--bt-group-content-fs, 14px) !default;
+$-group-card-side-margin: var(--bt-group-card-side-margin, 10px) !default;
+$-group-card-radius: var(--bt-group-card-radius, 8px) !default;
+$-group-card-shadow: var(--bt-group-card-shadow, 0 6px 18px rgba(0, 0, 0, 0.06)) !default;
+
+// ============================================================
+// Section 组件变量
+// ============================================================
+$-section-bg: var(--bt-section-bg, #ffffff) !default;
+$-section-radius: var(--bt-section-radius, 0) !default;
+$-section-header-padding: var(--bt-section-header-padding, 12px 16px) !default;
+$-section-header-min-height: var(--bt-section-header-min-height, 48px) !default;
+$-section-decoration-color: var(--bt-section-decoration-color, $-color-theme) !default;
+$-section-line-width: var(--bt-section-line-width, 4px) !default;
+$-section-line-height: var(--bt-section-line-height, 14px) !default;
+$-section-line-radius: var(--bt-section-line-radius, 999px) !default;
+$-section-point-size: var(--bt-section-point-size, 8px) !default;
+$-section-square-radius: var(--bt-section-square-radius, 2px) !default;
+$-section-title-fs: var(--bt-section-title-fs, 16px) !default;
+$-section-title-fw: var(--bt-section-title-fw, 600) !default;
+$-section-title-color: var(--bt-section-title-color, #333333) !default;
+$-section-sub-title-fs: var(--bt-section-sub-title-fs, 12px) !default;
+$-section-sub-title-color: var(--bt-section-sub-title-color, #999999) !default;
+$-section-right-fs: var(--bt-section-right-fs, 14px) !default;
+$-section-right-color: var(--bt-section-right-color, #666666) !default;
+$-section-body-padding: var(--bt-section-body-padding, 12px 16px 16px) !default;
+$-section-body-fs: var(--bt-section-body-fs, 14px) !default;
+$-section-body-color: var(--bt-section-body-color, #333333) !default;
+$-section-divider-color: var(--bt-section-divider-color, #ebedf0) !default;
+
+// ============================================================
 // Tag 组件变量
 // ============================================================
 $-tag-line-height: var(--bt-tag-line-height, 1.2) !default;
@@ -209,3 +255,24 @@ $-tag-error-border-color: var(--bt-tag-error-border-color, $-color-danger) !defa
 $-tag-error-inverted-color: var(--bt-tag-error-inverted-color, $-color-danger) !default;
 
 $-tag-inverted-bg: var(--bt-tag-inverted-bg, transparent) !default;
+
+// ============================================================
+// UploadImage 组件变量
+// ============================================================
+$-upload-image-gap: var(--bt-upload-image-gap, 10rpx) !default;
+$-upload-image-radius: var(--bt-upload-image-radius, 10px) !default;
+$-upload-image-bg: var(--bt-upload-image-bg, #ffffff) !default;
+$-upload-image-border-color: var(--bt-upload-image-border-color, #e5e7eb) !default;
+$-upload-image-add-bg: var(--bt-upload-image-add-bg, #f7f8fa) !default;
+$-upload-image-add-icon-color: var(--bt-upload-image-add-icon-color, #c0c4cc) !default;
+$-upload-image-delete-size: var(--bt-upload-image-delete-size, 36rpx) !default;
+$-upload-image-delete-bg: var(--bt-upload-image-delete-bg, rgba(0, 0, 0, 0.45)) !default;
+$-upload-image-delete-color: var(--bt-upload-image-delete-color, #ffffff) !default;
+$-upload-image-mask-bg: var(--bt-upload-image-mask-bg, rgba(0, 0, 0, 0.42)) !default;
+$-upload-image-mask-color: var(--bt-upload-image-mask-color, #ffffff) !default;
+$-upload-image-mask-fs: var(--bt-upload-image-mask-fs, 24rpx) !default;
+$-upload-image-title-color: var(--bt-upload-image-title-color, #333333) !default;
+$-upload-image-count-color: var(--bt-upload-image-count-color, #999999) !default;
+$-upload-image-title-fs: var(--bt-upload-image-title-fs, 28rpx) !default;
+$-upload-image-count-fs: var(--bt-upload-image-count-fs, 24rpx) !default;
+$-upload-image-add-icon-size: var(--bt-upload-image-add-icon-size, 44rpx) !default;

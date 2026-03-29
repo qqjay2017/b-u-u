@@ -51,6 +51,14 @@ const list = computed(() => [
         name: '按钮'
       },
       {
+        id: 'group',
+        name: '分组'
+      },
+      {
+        id: 'section',
+        name: '标题栏'
+      },
+      {
         id: 'tag',
         name: '标签'
       }
@@ -93,6 +101,10 @@ const list = computed(() => [
       {
         id: 'vehicleKeyboard',
         name: '车牌键盘'
+      },
+      {
+        id: 'uploadImage',
+        name: '图片上传'
       }
     ]
   }

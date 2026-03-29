@@ -2,9 +2,12 @@ declare module 'vue' {
   // Helper for Volar
   export interface GlobalComponents {
     BtButton: typeof import('./components/bt-button/bt-button.vue')['default']
+    BtGroup: typeof import('./components/bt-group/bt-group.vue')['default']
     BtPopup: typeof import('./components/bt-popup/bt-popup.vue')['default']
+    BtSection: typeof import('./components/bt-section/bt-section.vue')['default']
     BtTag: typeof import('./components/bt-tag/bt-tag.vue')['default']
     BtTabs: typeof import('./components/bt-tabs/bt-tabs.vue')['default']
+    BtUploadImage: typeof import('./components/bt-upload-image/bt-upload-image.vue')['default']
     BtVehicleInput: typeof import('./components/bt-vehicle-input/bt-vehicle-input.vue')['default']
     BtVehicleKeyboard: typeof import('./components/bt-vehicle-keyboard/bt-vehicle-keyboard.vue')['default']
     WdCalendar: typeof import('./components/wd-calendar/wd-calendar.vue')['default']

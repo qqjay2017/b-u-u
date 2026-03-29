@@ -78,27 +78,25 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| text | 标签内容 | `string` | `''` |
-| type | 标签类型，可选值：`default` / `primary` / `success` / `warning` / `error` | `TagType` | `default` |
-| size | 标签尺寸，可选值：`small` / `medium` / `mini` / `normal` | `TagSize` | `medium` |
-| disabled | 是否禁用 | `boolean` | `false` |
-| inverted | 是否为空心样式 | `boolean` | `false` |
-| circle | 是否为圆角样式 | `boolean` | `false` |
-| mark | 是否为标记样式 | `boolean` | `false` |
-| custom-class | 自定义根节点样式类 | `string` | `''` |
-| custom-style | 自定义根节点样式 | `string` | `''` |
+| type | 标签类型 | `TagType` | - |
+| text | 标签内容 | `string` | - |
+| disabled | 是否禁用 | `boolean` | - |
+| size | 标签尺寸 | `TagSize` | - |
+| circle | 是否为圆角样式 | `boolean` | - |
+| inverted | 是否为空心样式 | `boolean` | - |
+| mark | 是否为标记样式 | `boolean` | - |
 
 ## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
-| click | 点击标签时触发 | `Event` |
+| click |  | Event |
 
 ## 组件插槽
 
 | 插槽名 | 说明 | 参数 |
 | --- | --- | --- |
-| default | 自定义标签内容，优先级高于 `text` | - |
+| default |  | `{}` |
 
 <!-- API_END -->
 

@@ -57,6 +57,14 @@ export default defineConfig({
               text: 'Button'
             },
             {
+              link: '/en-US/component/group',
+              text: 'Group'
+            },
+            {
+              link: '/en-US/component/section',
+              text: 'Section'
+            },
+            {
               link: '/en-US/component/tag',
               text: 'Tag'
             }
@@ -90,6 +98,10 @@ export default defineConfig({
           text: 'Input',
           collapsed: false,
           items: [
+            {
+              link: '/en-US/component/uploadImage',
+              text: 'UploadImage'
+            },
             {
               link: '/en-US/component/vehicleKeyboard',
               text: 'VehicleKeyboard'

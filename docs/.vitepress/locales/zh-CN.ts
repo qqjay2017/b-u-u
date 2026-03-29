@@ -57,6 +57,14 @@ export default defineConfig({
               text: 'Button 按钮'
             },
             {
+              link: '/component/group',
+              text: 'Group 分组'
+            },
+            {
+              link: '/component/section',
+              text: 'Section 标题栏'
+            },
+            {
               link: '/component/tag',
               text: 'Tag 标签'
             }
@@ -90,6 +98,10 @@ export default defineConfig({
           text: '输入',
           collapsed: false,
           items: [
+            {
+              link: '/component/uploadImage',
+              text: 'UploadImage 图片上传'
+            },
             {
               link: '/component/vehicleKeyboard',
               text: 'VehicleKeyboard 车牌键盘'

@@ -1,0 +1,65 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+@include b(group) {
+  box-sizing: border-box;
+  background: $-group-bg;
+  border-radius: $-group-radius;
+  overflow: hidden;
+
+  @include when(card) {
+    margin: 0 $-group-card-side-margin;
+    border-radius: $-group-card-radius;
+    box-shadow: $-group-card-shadow;
+  }
+
+  @include e(header) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: $-group-header-min-height;
+    padding: $-group-header-padding;
+    box-sizing: border-box;
+    background: $-group-header-bg;
+  }
+
+  @include e(title) {
+    flex: 1;
+    min-width: 0;
+    font-size: $-group-title-fs;
+    font-weight: $-group-title-fw;
+    line-height: 1.4;
+    color: $-group-title-color;
+  }
+
+  @include e(right) {
+    flex-shrink: 0;
+    font-size: $-group-right-fs;
+    color: $-group-right-color;
+  }
+
+  @include e(divider) {
+    height: 1px;
+    background: $-group-divider-color;
+    transform: scaleY(0.5);
+    transform-origin: center bottom;
+  }
+
+  @include e(content) {
+    padding: $-group-content-padding;
+    box-sizing: border-box;
+    color: $-group-content-color;
+    font-size: $-group-content-fs;
+  }
+
+  @include e(content) {
+    @include when(no-padding) {
+      padding: 0;
+    }
+
+    @include when(custom-padding) {
+      padding: 0;
+    }
+  }
+}

@@ -112,3 +112,116 @@ Translations are in `src/locale/`. The custom i18n wrapper supports both named a
 - TypeScript — use `type` imports (`import type { Foo }`)
 - ESLint is lenient on `any` and `console` for development flexibility
 
+### New Component
+
+When adding a new component, update the repo in these places.
+
+#### 1. Component files
+
+Create a new directory under `src/uni_modules/battery-uniapp-ui/components/bt-<name>/` and usually include:
+
+- `bt-<name>.vue` — component implementation, Vue 3 `<script setup lang="ts">`
+- `types.ts` — props/types/interfaces, usually based on `components/common/props.ts`
+- `index.scss` — component styles
+- `index.ts` — type exports for external TS usage
+- extra internal files only if they are actually used by the public component
+
+Implementation rules:
+
+- Component `name` should use the `bt-<name>` convention
+- Add `options` when needed to match repo behavior:
+  - `addGlobalClass: true`
+  - `virtualHost: true`
+  - `styleIsolation: 'shared'`
+- Reuse `baseProps` so `customStyle` / `customClass` stay consistent
+- Prefer existing SCSS variables from `components/common/abstracts/variable.scss`
+- If new theme variables are needed, add them to `variable.scss` with `--bt-*` CSS variable fallback style
+
+#### 2. Global type registration
+
+Update `src/uni_modules/battery-uniapp-ui/global.d.ts`:
+
+- Add the new global component type, e.g. `BtUploadImage`
+
+If the component is meant to expose TS types publicly:
+
+- Add / update `index.ts` in the component directory to export `Props`, `Instance`, and related custom types
+
+#### 3. Demo page
+
+Add a demo page under `src/subPages/<camelName>/Index.vue`.
+
+Then wire it into the demo app:
+
+- `src/pages.json`
+  - add a sub-package page entry under `subPages`
+  - if title needs i18n, use `%key%`
+- `src/pages/index/Index.vue`
+  - add the component entry in the correct category list
+
+#### 4. Docs page
+
+Add component docs under `docs/component/<name>.md`.
+
+Recommended doc structure:
+
+- intro
+- basic usage
+- major variants / states
+- complete demo source via `<DemoCode src="subPages/<camelName>/Index.vue" />`
+- API section
+- theme variables section if applicable
+
+Then wire docs navigation:
+
+- `docs/.vitepress/locales/zh-CN.ts`
+- `docs/.vitepress/locales/en-US.ts`
+
+Add the new page into the correct sidebar group.
+
+#### 5. Optional i18n wiring
+
+Only update `src/locale/*.json` when the component demo page title or demo content depends on locale keys.
+
+Typical case:
+
+- `src/pages.json` uses `%xxx-title%`
+- then `src/locale/zh-CN.json` and `src/locale/en-US.json` need matching keys
+
+#### 6. Optional build metadata
+
+Depending on how complete the component integration needs to be, also check whether these should be regenerated:
+
+- `pnpm build:web-types`
+- `pnpm gendoc`
+- `pnpm build:theme-vars`
+
+Do this when component API metadata, IDE completion data, or theme variable docs are expected to stay in sync.
+
+#### 7. Validation checklist
+
+Before finishing, run the smallest useful set of checks:
+
+- `pnpm exec eslint <changed files>`
+- `pnpm exec vitepress build docs` if docs changed
+- `pnpm type-check`
+
+If `type-check` fails, separate:
+
+- errors introduced by the new component
+- pre-existing repo errors
+
+#### 8. Practical checklist
+
+For a normal new component with docs and demo, the usual touched files are:
+
+- `src/uni_modules/battery-uniapp-ui/components/bt-<name>/...`
+- `src/uni_modules/battery-uniapp-ui/components/common/abstracts/variable.scss` if new theme vars are needed
+- `src/uni_modules/battery-uniapp-ui/global.d.ts`
+- `src/subPages/<camelName>/Index.vue`
+- `src/pages.json`
+- `src/pages/index/Index.vue`
+- `docs/component/<name>.md`
+- `docs/.vitepress/locales/zh-CN.ts`
+- `docs/.vitepress/locales/en-US.ts`
+- `src/locale/zh-CN.json` / `src/locale/en-US.json` only if page title or demo text is localized

@@ -1,0 +1,90 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+@include b(section) {
+  box-sizing: border-box;
+  background: $-section-bg;
+  border-radius: $-section-radius;
+  overflow: hidden;
+
+  @include e(header) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: $-section-header-min-height;
+    padding: $-section-header-padding;
+    box-sizing: border-box;
+  }
+
+  @include e(decoration) {
+    flex-shrink: 0;
+    background: $-section-decoration-color;
+
+    @include when(line) {
+      width: $-section-line-width;
+      height: $-section-line-height;
+      border-radius: $-section-line-radius;
+    }
+
+    @include when(circle) {
+      width: $-section-point-size;
+      height: $-section-point-size;
+      border-radius: 50%;
+    }
+
+    @include when(square) {
+      width: $-section-point-size;
+      height: $-section-point-size;
+      border-radius: $-section-square-radius;
+    }
+
+    @include when(custom) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+  }
+
+  @include e(content) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @include e(title) {
+    @include lineEllipsis;
+    font-size: $-section-title-fs;
+    line-height: 1.5;
+    color: $-section-title-color;
+    font-weight: $-section-title-fw;
+  }
+
+  @include e(sub-title) {
+    margin-top: 4px;
+    font-size: $-section-sub-title-fs;
+    line-height: 1.5;
+    color: $-section-sub-title-color;
+  }
+
+  @include e(right) {
+    flex-shrink: 0;
+    font-size: $-section-right-fs;
+    color: $-section-right-color;
+  }
+
+  @include e(body) {
+    box-sizing: border-box;
+    font-size: $-section-body-fs;
+    color: $-section-body-color;
+
+    @include when(padded) {
+      padding: $-section-body-padding;
+    }
+
+    @include when(divider) {
+      border-top: 1px solid $-section-divider-color;
+    }
+  }
+}
