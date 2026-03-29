@@ -1,0 +1,20 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+// ============================================================
+// bt-vehicle-keyboard 主组件
+// ============================================================
+@include b(vehicle-keyboard) {
+  @include e(title) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 10px 0;
+    font-weight: bold;
+  }
+
+  @include e(input-wrap) {
+    background-color: #fff;
+  }
+}
+

@@ -1,0 +1,88 @@
+@import '../../common/abstracts/variable';
+@import '../../common/abstracts/mixin';
+
+.bt-keyboard-box {
+  $gutter: 10px;
+
+  background-color: $-keyboard-bg;
+  padding: $gutter;
+  position: relative;
+
+  &-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $gutter;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-item {
+    background-color: $-keyboard-key-bg;
+    color: $-keyboard-key-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px #999;
+    position: relative;
+
+    &:active:not(.bt-keyboard-box-item-empty) {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &-empty {
+      background-color: unset;
+      box-shadow: unset;
+
+      &:active:not(.bt-keyboard-box-item-disable) {
+        background-color: unset;
+      }
+    }
+
+    &-disable {
+      background-color: $-keyboard-key-disabled-bg;
+    }
+  }
+
+  &-btn {
+    background-color: $-keyboard-btn-bg;
+
+    &:active {
+      background-color: rgba(182, 188, 196, 0.8);
+    }
+  }
+
+  &-btn-del {
+    position: absolute;
+    right: $gutter;
+  }
+
+  &-btn-change {
+    position: absolute;
+    left: $gutter;
+  }
+
+  &-btn-over {
+    background-color: $-color-theme;
+    color: $-color-white;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &-toolbar {
+    margin-bottom: 0;
+
+    .bt-keyboard-box-item {
+      width: 100%;
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}

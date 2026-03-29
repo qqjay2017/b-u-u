@@ -1,0 +1,153 @@
+@import './../common/abstracts/_mixin.scss';
+@import './../common/abstracts/variable.scss';
+
+.wot-theme-dark {
+  @include b(action-sheet) {
+    background: $-dark-background2;
+
+    @include e(header) {
+      color: $-dark-color3;
+    }
+
+    @include e(close) {
+      color: $-dark-background7;
+    }
+
+    @include e(description) {
+      color: $-dark-background7;
+    }
+
+    @include e(item) {
+      color: $-dark-color3;
+      background: $-dark-background2;
+
+      @include when(hover) {
+        background: $-dark-background4;
+      }
+
+      @include when(disabled) {
+        color: $-dark-background5;
+      }
+
+      @include when(loading) {
+        color: $-dark-background5;
+      }
+    }
+
+    @include e(subname) {
+      color: $-dark-background7;
+    }
+
+    @include e(loading-icon) {
+      color: $-dark-background7;
+    }
+
+    @include e(gap) {
+      background: $-dark-background;
+    }
+
+    @include e(cancel) {
+      color: $-dark-color3;
+      background: $-dark-background2;
+    }
+  }
+}
+
+@include b(action-sheet) {
+  width: 100%;
+  background: $-color-white;
+  overflow: hidden;
+
+  @include when(round) {
+    border-radius: 32rpx 32rpx 0 0;
+  }
+
+  @include e(header) {
+    position: relative;
+    padding: 24rpx 32rpx;
+    font-size: 32rpx;
+    font-weight: $-fw-semibold;
+    text-align: center;
+    line-height: 48rpx;
+    color: $-color-gray-8;
+  }
+
+  @include e(close) {
+    position: absolute;
+    top: 24rpx;
+    right: 32rpx;
+    padding: 0 16rpx;
+    font-size: 36rpx;
+    color: $-color-gray-6;
+  }
+
+  @include e(description) {
+    padding: 16rpx 32rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: $-color-gray-6;
+    line-height: 40rpx;
+  }
+
+  @include e(content) {
+    // 选项列表容器
+  }
+
+  @include e(item) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28rpx 32rpx;
+    font-size: 32rpx;
+    color: $-color-gray-8;
+    line-height: 44rpx;
+    background: $-color-white;
+
+    @include when(hover) {
+      background: $-color-gray-2;
+    }
+
+    @include when(disabled) {
+      color: $-color-gray-5;
+      pointer-events: none;
+    }
+
+    @include when(loading) {
+      color: $-color-gray-5;
+      pointer-events: none;
+    }
+  }
+
+  @include e(name) {
+    font-weight: $-fw-medium;
+  }
+
+  @include e(subname) {
+    margin-top: 8rpx;
+    font-size: 24rpx;
+    color: $-color-gray-6;
+    line-height: 36rpx;
+  }
+
+  @include e(loading-icon) {
+    font-size: 40rpx;
+    color: $-color-gray-6;
+  }
+
+  @include e(gap) {
+    height: 16rpx;
+    background: $-color-gray-1;
+  }
+
+  @include e(cancel) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28rpx 32rpx;
+    font-size: 32rpx;
+    color: $-color-gray-7;
+    line-height: 44rpx;
+    background: $-color-white;
+  }
+}

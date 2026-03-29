@@ -1,0 +1,56 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+@include b(popup) {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  display: none;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+
+  @include when(show) {
+    display: flex;
+  }
+
+  @include when(inline) {
+    display: flex;
+    position: unset;
+    background-color: unset !important;
+  }
+
+  @include e(content) {
+    width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    flex: 1;
+
+    @include when(anim) {
+      animation-duration: 0.2s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: both;
+      animation-name: bt-popup-slide-up;
+    }
+
+    @include when(inline) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@keyframes bt-popup-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/Index",
+      "name": "index",
+      "style": {
+        "mp-alipay": {
+          "allowsBounceVertical": "NO"
+        },
+        // #ifdef MP
+        "navigationBarTitleText": "首页",
+        // #endif
+        // #ifndef MP
+        "navigationBarTitleText": "%index-title%"
+        // #endif
+      }
+    },
+    {
+      "path": "pages/about/Index",
+      "name": "about",
+      "style": {
+        "mp-alipay": {
+          "allowsBounceVertical": "NO"
+        },
+        // #ifdef MP
+        "navigationBarTitleText": "关于",
+        // #endif
+        // #ifndef MP
+        "navigationBarTitleText": "%about-title%"
+        // #endif
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "subPages",
+      "pages": [
+        {
+          "path": "button/Index",
+          "name": "button",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            // #ifdef MP
+            "navigationBarTitleText": "Button 按钮",
+            // #endif
+            // #ifndef MP
+            "navigationBarTitleText": "%button-title%"
+            // #endif
+          }
+        },
+        {
+          "path": "popup/Index",
+          "name": "popup",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            "navigationBarTitleText": "Popup 弹出层"
+          }
+        },
+        {
+          "path": "tabs/Index",
+          "name": "tabs",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            "navigationBarTitleText": "Tabs 标签页"
+          }
+        },
+        {
+          "path": "vehicleKeyboard/Index",
+          "name": "vehicleKeyboard",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            "navigationBarTitleText": "VehicleKeyboard 车牌键盘"
+          }
+        },
+        {
+          "path": "actionSheet/Index",
+          "name": "actionSheet",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            "navigationBarTitleText": "ActionSheet 动作面板"
+          }
+        }
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "@color",
+    "selectedColor": "@selectedColor",
+    "backgroundColor": "@backgroundColor",
+    "borderStyle": "@borderStyle",
+    "list": [
+      {
+        "pagePath": "pages/index/Index",
+        "text": "Demo",
+        "iconPath": "static/icon/app.png",
+        "selectedIconPath": "static/icon/app_selected.png"
+      },
+      {
+        "pagePath": "pages/about/Index",
+        // #ifdef MP
+        "text": "关于",
+        // #endif
+        // #ifndef MP
+        "text": "%about-title%",
+        // #endif
+        "iconPath": "static/icon/about.png",
+        "selectedIconPath": "static/icon/about_selected.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarTitleText": "battery uniapp ui",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom",
+    "navigationStyle": "default"
+  }
+}

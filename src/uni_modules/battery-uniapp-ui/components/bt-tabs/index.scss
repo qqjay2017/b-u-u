@@ -1,0 +1,91 @@
+@import '../common/abstracts/variable';
+@import '../common/abstracts/mixin';
+
+@include b(tabs) {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* #ifdef H5 */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  /* #endif */
+
+  @include e(container) {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: $-tabs-bg;
+    height: $-tabs-height;
+
+    @include when(scroll) {
+      display: inline-flex;
+      white-space: nowrap;
+    }
+  }
+
+  @include e(item) {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    color: $-tabs-color;
+    font-size: $-tabs-fs;
+    padding: $-tabs-item-padding;
+    transition: all 0.3s;
+    white-space: nowrap;
+
+    @include when(active) {
+      color: $-tabs-active-color;
+    }
+
+    @include when(bold) {
+      font-weight: bold;
+    }
+
+    @include when(disabled) {
+      opacity: $-tabs-disabled-opacity;
+    }
+
+    @include when(flex) {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  @include e(line) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $-tabs-line-color;
+    height: $-tabs-line-height;
+    border-radius: $-tabs-line-radius;
+
+    @include when(animated) {
+      transition: all 0.3s linear;
+    }
+  }
+
+  @include e(pills) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    background: $-tabs-pills-bg;
+    border-radius: $-tabs-pills-radius;
+    height: 100%;
+
+    @include when(animated) {
+      transition: all 0.3s linear;
+    }
+  }
+
+  @include e(placeholder) {
+    height: $-tabs-height;
+  }
+}

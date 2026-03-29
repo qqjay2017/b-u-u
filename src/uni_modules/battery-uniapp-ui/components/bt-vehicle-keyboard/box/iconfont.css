@@ -1,0 +1,21 @@
+@font-face {
+	font-family: "box-icon";
+	src: url('./iconfont.woff2') format('woff2'),
+		url('./iconfont.ttf') format('truetype');
+}
+
+.box-icon {
+	font-family: "box-icon" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.box-icon-backspace:before {
+	content: "\e611";
+}
+
+.box-icon-jianpan:before {
+	content: "\e661";
+}

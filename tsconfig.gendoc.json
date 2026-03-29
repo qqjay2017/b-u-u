@@ -1,0 +1,20 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "ignoreDeprecations": "5.0",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["node"],
+    "sourceMap": false,
+    "module": "ESNext"
+  },
+  "include": [
+    "src/uni_modules/battery-uniapp-ui/components/**/*.ts",
+    "src/uni_modules/battery-uniapp-ui/components/**/*.vue"
+  ],
+  "exclude": ["node_modules"]
+}
