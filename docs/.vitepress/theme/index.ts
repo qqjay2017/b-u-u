@@ -20,6 +20,7 @@ import CustomFooter from './components/CustomFooter.vue'
 import SvgImage from './components/SvgImage.vue'
 import HomeStar from './components/HomeStar.vue'
 import ExternalLink from './components/ExternalLink.vue'
+import DemoCode from './components/DemoCode.vue'
 import WwAds from './components/WwAds.vue'
 import SpecialSponsor from './components/SpecialSponsor.vue'
 import Banner from './components/Banner.vue'
@@ -51,6 +52,7 @@ export default {
   enhanceApp({ app, router }:any) {
     app.component('SvgImage', SvgImage)
     app.component('ExternalLink',ExternalLink)
+    app.component('DemoCode', DemoCode)
     app.use(ElementPlus)
     
     if (typeof window !== 'undefined') {

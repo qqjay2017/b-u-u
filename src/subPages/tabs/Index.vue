@@ -1,32 +1,32 @@
 <template>
   <page-wraper>
     <view class="demo-page">
-      <demo-block title="基本用法（字符串列表）">
-        <bt-tabs v-model="tab1" :tabs="tabs1" />
-        <view class="tab-content">当前选中：{{ tabs1[tab1] }}</view>
+      <demo-block title="基本用法">
+        <bt-tabs v-model="tab1" :tabs="tabs1" field="label" />
+        <view class="tab-content">当前选中：{{ tabs1[tab1]?.label }}</view>
       </demo-block>
 
       <demo-block title="胶囊样式">
-        <bt-tabs v-model="tab2" :tabs="tabs1" type="pills" />
-        <view class="tab-content">当前选中：{{ tabs1[tab2] }}</view>
+        <bt-tabs v-model="tab2" :tabs="tabs1" type="pills" field="label" />
+        <view class="tab-content">当前选中：{{ tabs1[tab2]?.label }}</view>
       </demo-block>
 
       <demo-block title="选中加粗">
-        <bt-tabs v-model="tab3" :tabs="tabs1" bold />
+        <bt-tabs v-model="tab3" :tabs="tabs1" field="label" bold />
       </demo-block>
 
       <demo-block title="可滚动（多 tab）">
-        <bt-tabs v-model="tab4" :tabs="tabsLong" />
-        <view class="tab-content">当前选中：{{ tabsLong[tab4] }}</view>
+        <bt-tabs v-model="tab4" :tabs="tabsLong" field="label" />
+        <view class="tab-content">当前选中：{{ tabsLong[tab4]?.label }}</view>
       </demo-block>
 
       <demo-block title="下划线缩放比例">
-        <bt-tabs v-model="tab5" :tabs="tabs1" :line-scale="1" />
+        <bt-tabs v-model="tab5" :tabs="tabs1" field="label" :line-scale="1" />
         <view class="tab-content">line-scale=1（下划线与 tab 等宽）</view>
       </demo-block>
 
       <demo-block title="禁用切换动画">
-        <bt-tabs v-model="tab6" :tabs="tabs1" :animated="false" />
+        <bt-tabs v-model="tab6" :tabs="tabs1" field="label" :animated="false" />
       </demo-block>
 
       <demo-block title="对象列表（field 指定显示字段）">
@@ -44,7 +44,7 @@
           <template #default="{ row, index }">
             <view class="custom-tab">
               <text class="custom-tab__dot" :class="{ 'is-active': tab9 === index }"></text>
-              {{ row }}
+              {{ row.label }}
             </view>
           </template>
         </bt-tabs>
@@ -56,8 +56,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const tabs1 = ['全部', '进行中', '已完成', '已取消']
-const tabsLong = ['首页', '推荐', '热门', '关注', '附近', '直播', '购物', '游戏', '音乐', '电影']
+const tabs1 = [
+  { label: '全部', value: 0 },
+  { label: '进行中', value: 1 },
+  { label: '已完成', value: 2 },
+  { label: '已取消', value: 3 }
+]
+const tabsLong = [
+  { label: '首页', value: 0 },
+  { label: '推荐', value: 1 },
+  { label: '热门', value: 2 },
+  { label: '关注', value: 3 },
+  { label: '附近', value: 4 },
+  { label: '直播', value: 5 },
+  { label: '购物', value: 6 },
+  { label: '游戏', value: 7 },
+  { label: '音乐', value: 8 },
+  { label: '电影', value: 9 }
+]
 const tabsObj = [
   { label: '待付款', value: 0 },
   { label: '待发货', value: 1 },

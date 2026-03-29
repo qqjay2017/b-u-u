@@ -11,7 +11,7 @@ export const tabsProps = {
   /** tabs 列表 */
   tabs: makeArrayProp<Record<string, any>>(),
   /** 对象列表时显示的键名 */
-  field: makeStringProp(''),
+  field: makeStringProp('label'),
   /** 选项卡指示器类型 */
   type: makeStringProp<TabsType>('line'),
   /** 是否可滚动 */

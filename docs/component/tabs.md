@@ -91,6 +91,10 @@ const tabsObj = [
 </bt-tabs>
 ```
 
+## 完整 Demo 源码
+
+<DemoCode src="subPages/tabs/Index.vue" />
+
 <!-- API_START:bt-tabs -->
 
 ## 组件属性

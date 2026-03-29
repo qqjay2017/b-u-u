@@ -119,6 +119,10 @@
 }
 ```
 
+## 完整 Demo 源码
+
+<DemoCode src="subPages/button/Index.vue" />
+
 <!-- API_START:bt-button -->
 
 ## 组件属性

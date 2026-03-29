@@ -3,6 +3,7 @@ import viteCompression from 'vite-plugin-compression'
 import { fileURLToPath, URL } from 'node:url'
 import { MarkdownTransform } from './plugins/markdown-transform'
 import { VersionBadgePlugin } from './plugins/version-badge'
+import { DemoCodePlugin } from './plugins/demo-code'
 
 import enUS from './locales/en-US'
 import zhCN from './locales/zh-CN'
@@ -10,6 +11,7 @@ export default defineConfig({
   vite: {
     plugins: [
      
+      DemoCodePlugin(),
       MarkdownTransform(),
       VersionBadgePlugin(),
       viteCompression({
