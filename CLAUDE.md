@@ -24,14 +24,22 @@ pnpm lint
 pnpm type-check
 
 # Tests
-pnpm test               # Run all tests
+pnpm test               # Run all tests (watch mode)
 pnpm test:h5            # H5 platform tests
 pnpm test:mp-weixin     # WeChat platform tests
-pnpm coverage           # Test coverage
+pnpm test:all           # Run H5 + WeChat tests sequentially
+pnpm coverage           # Test coverage (run once, no watch)
+# Run a single test file:
+pnpm test src/path/to/file.test.ts
 
 # Docs
 pnpm dev:docs           # VitePress dev server (port 5174)
 pnpm build:docs         # Build H5 demo + docs
+
+# Scripts (run via esno)
+pnpm gendoc             # Auto-generate component docs from JSDoc prop comments
+pnpm build:web-types    # Build IDE web-types for component completion
+pnpm build:theme-vars   # Generate CSS variable documentation
 ```
 
 Commits must follow Conventional Commits (enforced by `commitlint`). Use `pnpm commit` to run the interactive Commitizen CLI.
@@ -53,7 +61,7 @@ src/
   pages/                           # Demo app main pages
   subPages/                        # Sub-package demo pages
   components/                      # Demo app wrapper components
-  store/                           # Dark mode reactive store (no Pinia)
+  store/                           # Dark mode reactive store — module-level ref, no Pinia
   locale/                          # i18n (zh-CN, en-US)
 docs/                              # VitePress documentation site
 scripts/                           # Build, release, doc-gen scripts (run via esno)
@@ -69,8 +77,9 @@ Each component lives in `src/uni_modules/battery-uniapp-ui/components/bt-<name>/
 
 Shared internals under `components/common/`:
 - `abstracts/variable.scss` — SCSS design token variables (CSS custom properties with `--bt-*` fallback pattern)
+- `abstracts/_mixin.scss`, `_function.scss`, `_config.scss` — SCSS mixins, functions, and config
 - `util.ts` — common utility functions
-- `props.ts` — shared prop definitions
+- `props.ts` — shared prop factory helpers (`makeBooleanProp`, `makeStringProp`, etc.) and `baseProps` (`customStyle`, `customClass`)
 - `clickoutside.ts` — click-outside directive
 - `interceptor.ts` — request/response interceptors
 
@@ -103,6 +112,3 @@ Translations are in `src/locale/`. The custom i18n wrapper supports both named a
 - TypeScript — use `type` imports (`import type { Foo }`)
 - ESLint is lenient on `any` and `console` for development flexibility
 
-### Testing
-
-Tests use Vitest + `@vue/test-utils`. Platform-specific behavior is toggled with `UNI_PLATFORM` environment variable. Test files are co-located or in a `__tests__/` directory.

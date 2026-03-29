@@ -121,16 +121,16 @@
 
 <!-- API_START:bt-button -->
 
-## Attributes
+## 组件属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| plain | 幽灵按钮 | `boolean` | false |
 | round | 圆角按钮 | `boolean` | true |
+| type | 按钮类型，可选值：primary / success / info / warning / error / text / icon | `ButtonType` | primary |
+| plain | 幽灵按钮 | `boolean` | false |
 | disabled | 禁用按钮 | `boolean` | false |
 | hairline | 是否细边框 | `boolean` | false |
 | block | 块状按钮 | `boolean` | false |
-| type | 按钮类型，可选值：primary / success / info / warning / error / text / icon | `ButtonType` | primary |
 | size | 按钮尺寸，可选值：small / medium / large | `ButtonSize` | medium |
 | class-prefix | 类名前缀，用于使用自定义图标，用法参考Icon组件 | `string` | wd-icon |
 | loading | 加载中按钮 | `boolean` | false |
@@ -148,7 +148,7 @@
 | button-id | 按钮的唯一标识，可用于设置隐私同意授权按钮的id | `string` | - |
 | scope | 支付宝小程序，当 open-type 为 getAuthorize 时有效。 可选值：'phoneNumber' | 'userInfo' | `ButtonScope` | - |
 
-## Events
+## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
@@ -163,10 +163,10 @@
 | chooseavatar |  | any |
 | agreeprivacyauthorization |  | any |
 
+## 组件插槽
+
+| 插槽名 | 说明 | 参数 |
+| --- | --- | --- |
+| default |  | `{}` |
+
 <!-- API_END -->
-
-## 外部样式类
-
-| 类名         | 说明       | 最低版本 |
-| ------------ | ---------- | -------- |
-| custom-class | 根节点样式 | -        |

@@ -9,7 +9,7 @@ export const tabsProps = {
   /** 当前选中项的下标 */
   modelValue: makeNumericProp(0),
   /** tabs 列表 */
-  tabs: makeArrayProp<string | Record<string, any>>([]),
+  tabs: makeArrayProp<Record<string, any>>(),
   /** 对象列表时显示的键名 */
   field: makeStringProp(''),
   /** 选项卡指示器类型 */
@@ -25,7 +25,7 @@ export const tabsProps = {
   /** 是否开启切换动画 */
   animated: makeBooleanProp(true),
   /** 固定定位时的 z-index */
-  zIndex: makeNumericProp(1993),
+  zIndex: makeNumericProp(1993)
 }
 
 export type TabsProps = ExtractPropTypes<typeof tabsProps>

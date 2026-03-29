@@ -93,42 +93,36 @@ const tabsObj = [
 
 <!-- API_START:bt-tabs -->
 
-## Attributes
+## 组件属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| model-value / v-model | 当前选中项下标 | `number` | 0 |
-| tabs | 选项卡列表，支持字符串数组或对象数组 | `Array<string \| object>` | [] |
-| field | 对象数组时，用于显示的字段名 | `string` | - |
-| type | 指示器类型，可选值：`line` / `pills` | `TabsType` | line |
-| scroll | 是否可横向滚动 | `boolean` | true |
-| bold | 选中文字是否加粗 | `boolean` | false |
-| fixed | 是否固定在页面顶部 | `boolean` | false |
-| line-scale | 下划线宽度与选项宽度的比例 | `number` | 0.5 |
-| animated | 是否开启指示器切换动画 | `boolean` | true |
-| z-index | 固定定位时的 z-index | `number` | 1993 |
+| bold | 选中文字是否加粗 | `boolean` | - |
+| fixed | 是否固定在顶部 | `boolean` | - |
+| type | 选项卡指示器类型 | `TabsType` | - |
+| z-index | 固定定位时的 z-index | `number` | - |
+| model-value | 当前选中项的下标 | `number` | - |
+| tabs | tabs 列表 | `Record<string, any>[]` | - |
+| field | 对象列表时显示的键名 | `string` | - |
+| scroll | 是否可滚动 | `boolean` | - |
+| line-scale | 下划线宽度相对于选项宽度的缩放比例 | `number` | - |
+| animated | 是否开启切换动画 | `boolean` | - |
 
-## Events
+## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
-| update:modelValue | 选中项变化时触发 | `index: number` |
-| change | 切换选项卡时触发 | `index: number` |
+| update:modelValue |  | number |
+| change |  | number |
+
+## 组件插槽
+
+| 插槽名 | 说明 | 参数 |
+| --- | --- | --- |
+| default |  | `{ row: Record<string, any>; index: number; }` |
 
 <!-- API_END -->
 
-## 外部样式类
-
-| 类名 | 说明 |
-| --- | --- |
-| custom-class | 根节点样式类 |
-| custom-style | 根节点内联样式 |
-
-## Slots
-
-| 名称 | 说明 | 参数 |
-| --- | --- | --- |
-| default | 自定义选项卡内容 | `{ row: string \| object, index: number }` |
 
 
 

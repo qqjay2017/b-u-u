@@ -2,7 +2,7 @@ import type { PropType } from 'vue'
 
 export const unknownProp = null as unknown as PropType<unknown>
 
-export const numericProp = [Number, String]
+export const numericProp = [Number]
 
 export const truthProp = {
   type: Boolean,

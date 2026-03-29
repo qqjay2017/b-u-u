@@ -167,51 +167,29 @@ if (result) {
 
 <!-- API_START:bt-action-sheet -->
 
-## Attributes
+## 组件属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| show (v-model) | 是否显示 | `boolean` | false |
+| show | 是否显示 | `boolean` | false |
 | actions | 选项列表 | `ActionSheetAction[]` | [] |
-| title | 顶部标题，有标题时显示关闭图标 | `string` | '' |
+| title | 顶部标题 | `string` | '' |
 | description | 标题下方的描述信息 | `string` | '' |
 | cancel-text | 取消按钮文字，为空时不显示 | `string` | '取消' |
 | close-on-click-action | 点击选项后是否关闭 | `boolean` | false |
 | close-on-click-overlay | 点击遮罩是否关闭 | `boolean` | false |
 | round | 是否显示圆角 | `boolean` | true |
-| safe-area-inset-bottom | 是否开启底部安全区适配 | `boolean` | true |
-| custom-class | 自定义根节点样式类 | `string` | '' |
-| custom-style | 自定义根节点样式 | `string` | '' |
 
-## ActionSheetAction
-
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| name | 选项名称 | `string` | - |
-| subname | 描述信息 | `string` | - |
-| color | 选项文字颜色 | `string` | - |
-| disabled | 是否禁用 | `boolean` | false |
-| loading | 是否加载中 | `boolean` | false |
-| className | 额外类名 | `string` | - |
-| key | 唯一标识 | `string \| number` | - |
-
-## Events
+## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
-| update:show | 显示状态变化时触发 | `value: boolean` |
-| select | 点击选项时触发 | `action: ActionSheetAction, index: number` |
-| cancel | 点击取消按钮时触发 | - |
-| open | 打开时触发 | - |
-| close | 关闭时触发 | - |
-| opened | 打开动画结束后触发 | - |
-| closed | 关闭动画结束后触发 | - |
+| cancel |  | - |
+| open |  | - |
+| close |  | - |
+| opened |  | - |
+| closed |  | - |
+| select |  | ActionSheetAction, number |
+| update:show |  | boolean |
 
 <!-- API_END -->
-
-## 外部样式类
-
-| 类名 | 说明 | 最低版本 |
-| --- | --- | --- |
-| custom-class | 根节点样式类 | - |
-| custom-style | 根节点内联样式 | - |

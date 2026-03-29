@@ -75,36 +75,30 @@
 
 <!-- API_START:bt-popup -->
 
-## Attributes
+## 组件属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| show | 是否显示弹出层 | `boolean` | false |
-| background | 内容区域背景颜色 | `string` | #ffffff |
-| radius | 内容区域顶部圆角（px） | `number` | 0 |
-| z-index | 弹出层的 z-index | `number` | 1992 |
-| mask-closable | 点击遮罩是否可关闭 | `boolean` | true |
-| mask-background | 遮罩背景色 | `string` | rgba(0,0,0,0.6) |
-| show-content | 内联模式，直接显示内容不使用弹出遮罩 | `boolean` | false |
-| anim | 是否开启弹出动画 | `boolean` | true |
+| show | 是否显示弹出层 | `boolean` | - |
+| background | 弹出层内容背景颜色 | `string` | - |
+| radius | 弹出层内容圆角 | `number` | - |
+| z-index | 弹出层的 z-index | `number` | - |
+| mask-closable | 点击遮罩是否可关闭 | `boolean` | - |
+| mask-background | 遮罩的背景色 | `string` | - |
+| show-content | 是否直接显示内容（不使用弹出模式） | `boolean` | - |
+| anim | 是否加入动画效果 | `boolean` | - |
 
-## Events
+## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
-| close | 点击遮罩或外部触发关闭时触发 | - |
+| close |  | - |
+
+## 组件插槽
+
+| 插槽名 | 说明 | 参数 |
+| --- | --- | --- |
+| default |  | `{}` |
 
 <!-- API_END -->
 
-## 外部样式类
-
-| 类名 | 说明 |
-| --- | --- |
-| custom-class | 根节点样式类 |
-| custom-style | 根节点内联样式 |
-
-## Slots
-
-| 名称 | 说明 |
-| --- | --- |
-| default | 弹出层内容 |

@@ -11,7 +11,7 @@
  */
 
 import { createChecker } from 'vue-component-meta'
-import type { PropertyMeta, EventMeta } from 'vue-component-meta'
+import type { PropertyMeta, EventMeta, SlotMeta } from 'vue-component-meta'
 import path from 'path'
 import fs from 'fs'
 
@@ -73,6 +73,11 @@ function getTag(tags: PropertyMeta['tags'], name: string): string | undefined {
   return tags.find((t) => t.name === name)?.text
 }
 
+/** 转义 Markdown 表格单元格里的竖线，防止破坏列分隔 */
+function escapeCell(str: string): string {
+  return str.replace(/\|/g, '\\|')
+}
+
 // ──────────────────────────────────────────────
 // 表格生成
 // ──────────────────────────────────────────────
@@ -84,13 +89,13 @@ function buildAttributesTable(props: PropertyMeta[]): string {
   const rows = list.map((p) => {
     const name = toKebabCase(p.name)
     const desc = (getTag(p.tags, 'description') ?? p.description ?? '-').replace(/\n/g, ' ').trim()
-    const type = cleanType(p.type || '-')
+    const type = escapeCell(cleanType(p.type || '-'))
     // 优先用 @default tag，其次用 meta 里的 default 字段
     const def = getTag(p.tags, 'default') ?? (p.default != null ? p.default.replace(/\n/g, ' ') : '-')
     return `| ${name} | ${desc} | \`${type}\` | ${def} |`
   })
 
-  return ['## Attributes', '', '| 参数 | 说明 | 类型 | 默认值 |', '| --- | --- | --- | --- |', ...rows, ''].join('\n')
+  return ['## 组件属性', '', '| 参数 | 说明 | 类型 | 默认值 |', '| --- | --- | --- | --- |', ...rows, ''].join('\n')
 }
 
 function buildEventsTable(events: EventMeta[]): string {
@@ -99,11 +104,23 @@ function buildEventsTable(events: EventMeta[]): string {
   const rows = events.map((e) => {
     const desc = (getTag(e.tags, 'description') ?? e.description ?? '-').replace(/\n/g, ' ').trim()
     // signature 示例: "(event: MouseEvent): void"，取括号内参数部分
-    const params = e.schema.length > 0 ? e.schema.map((s: any) => cleanType(typeof s === 'string' ? s : s.type ?? '')).join(', ') : '-'
+    const params = e.schema.length > 0 ? escapeCell(e.schema.map((s: any) => cleanType(typeof s === 'string' ? s : s.type ?? '')).join(', ')) : '-'
     return `| ${e.name} | ${desc} | ${params} |`
   })
 
-  return ['## Events', '', '| 事件名称 | 说明 | 参数 |', '| --- | --- | --- |', ...rows, ''].join('\n')
+  return ['## 组件事件', '', '| 事件名称 | 说明 | 参数 |', '| --- | --- | --- |', ...rows, ''].join('\n')
+}
+
+function buildSlotsTable(slots: SlotMeta[]): string {
+  if (slots.length === 0) return ''
+
+  const rows = slots.map((s) => {
+    const desc = (getTag(s.tags, 'description') ?? s.description ?? '-').replace(/\n/g, ' ').trim()
+    const type = escapeCell(cleanType(s.type || '-'))
+    return `| ${s.name} | ${desc} | \`${type}\` |`
+  })
+
+  return ['## 组件插槽', '', '| 插槽名 | 说明 | 参数 |', '| --- | --- | --- |', ...rows, ''].join('\n')
 }
 
 // ──────────────────────────────────────────────
@@ -149,6 +166,8 @@ async function main() {
       if (attrs) parts.push(attrs)
       const events = buildEventsTable(meta.events)
       if (events) parts.push(events)
+      const slots = buildSlotsTable(meta.slots)
+      if (slots) parts.push(slots)
 
       const generated = parts.join('\n')
       const newBlock = `${startTag}\n\n${generated}\n${endTag}`

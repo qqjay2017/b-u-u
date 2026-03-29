@@ -10,26 +10,13 @@
       :style="scrollViewStyle"
     >
       <view :class="containerClass">
-        <view
-          v-for="(item, index) in tabs"
-          :key="index"
-          :class="getItemClass(index)"
-          @click="handleChange(index)"
-        >
+        <view v-for="(item, index) in tabs" :key="index" :class="getItemClass(index)" @click="handleChange(index)">
           <!-- @slot default 自定义选项卡内容 -->
           <slot :row="item" :index="index">{{ getLabel(item) }}</slot>
         </view>
         <template v-if="tabs.length">
-          <view
-            v-if="type === 'line'"
-            :class="lineClass"
-            :style="lineStyle"
-          />
-          <view
-            v-else
-            :class="pillsClass"
-            :style="pillsStyle"
-          />
+          <view v-if="type === 'line'" :class="lineClass" :style="lineStyle" />
+          <view v-else :class="pillsClass" :style="pillsStyle" />
         </template>
       </view>
     </scroll-view>
@@ -101,12 +88,12 @@ const pillsClass = computed(() => {
 
 const lineStyle = computed(() => ({
   width: `${indicatorWidth.value}px`,
-  transform: `translate3d(${indicatorLeft.value}px, 0, 0)`,
+  transform: `translate3d(${indicatorLeft.value}px, 0, 0)`
 }))
 
 const pillsStyle = computed(() => ({
   width: `${indicatorWidth.value}px`,
-  transform: `translate3d(${indicatorLeft.value}px, 0, 0)`,
+  transform: `translate3d(${indicatorLeft.value}px, 0, 0)`
 }))
 
 function getItemClass(index: number) {
@@ -140,9 +127,6 @@ function handleChange(index: number) {
 function createQuery() {
   // #ifndef MP-ALIPAY
   return uni.createSelectorQuery().in(instance)
-  // #endif
-  // #ifdef MP-ALIPAY
-  return uni.createSelectorQuery()
   // #endif
 }
 
@@ -188,8 +172,16 @@ function updateLayout() {
   })
 }
 
-watch(() => props.modelValue, () => updateLayout(), { immediate: true })
-watch(() => props.tabs, () => updateLayout(), { deep: true })
+watch(
+  () => props.modelValue,
+  () => updateLayout(),
+  { immediate: true }
+)
+watch(
+  () => props.tabs,
+  () => updateLayout(),
+  { deep: true }
+)
 </script>
 
 <style lang="scss">

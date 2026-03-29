@@ -79,25 +79,25 @@ function openKeyboard(pos: number) {
 
 <!-- API_START:bt-vehicle-keyboard -->
 
-## Attributes（bt-vehicle-keyboard）
+## 组件属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| title | 键盘顶部标题 | `string` | - |
-| type | 键盘类型，`plate`：省份+字母数字；`custom`：仅字母数字 | `VehicleKeyboardType` | plate |
-| max | 最大输入长度 | `number` | 8 |
-| cursor | 是否显示光标 | `boolean` | false |
-| vibration | 按键是否震动 | `boolean` | false |
-| show-content | 内联模式，键盘嵌入页面不弹出 | `boolean` | false |
-| anim | 是否开启弹出动画 | `boolean` | true |
-| disable | 禁用的按键，多个按键用逗号分隔 | `string` | - |
+| title | 标题 | `string` | - |
+| type | 键盘类型 | `VehicleKeyboardType` | - |
+| show-content | 是否直接显示内容（嵌入模式） | `boolean` | - |
+| anim | 是否加入动画效果 | `boolean` | - |
+| cursor | 是否显示光标 | `boolean` | - |
+| vibration | 是否开启震动效果 | `boolean` | - |
+| max | 最大输入长度 | `number` | - |
+| disable | 禁用某些按键 | `string` | '' |
 
-## Events（bt-vehicle-keyboard）
+## 组件事件
 
 | 事件名称 | 说明 | 参数 |
 | --- | --- | --- |
-| confirm | 点击完成按钮时触发 | `value: string` |
-| cancel | 点击取消按钮时触发 | - |
+| cancel |  | - |
+| confirm |  | string |
 
 <!-- API_END -->
 
@@ -143,12 +143,6 @@ function openKeyboard(pos: number) {
 
 <!-- API_END -->
 
-## 外部样式类
-
-| 类名 | 说明 |
-| --- | --- |
-| custom-class | 根节点样式类 |
-| custom-style | 根节点内联样式 |
 
 
 
