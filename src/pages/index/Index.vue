@@ -77,6 +77,10 @@ const list = computed(() => [
       {
         id: 'actionSheet',
         name: '底部下弹选择'
+      },
+      {
+        id: 'toast',
+        name: '轻提示'
       }
     ]
   },

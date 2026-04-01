@@ -10,6 +10,8 @@ declare module 'vue' {
     BtUploadImage: typeof import('./components/bt-upload-image/bt-upload-image.vue')['default']
     BtVehicleInput: typeof import('./components/bt-vehicle-input/bt-vehicle-input.vue')['default']
     BtVehicleKeyboard: typeof import('./components/bt-vehicle-keyboard/bt-vehicle-keyboard.vue')['default']
+    BtToast: typeof import('./components/bt-toast/bt-toast.vue')['default']
+    BtToastObserver: typeof import('./components/bt-toast/bt-toast-observer.vue')['default']
     WdCalendar: typeof import('./components/wd-calendar/wd-calendar.vue')['default']
     WdCalendarView: typeof import('./components/wd-calendar-view/wd-calendar-view.vue')['default']
     WdCard: typeof import('./components/wd-card/wd-card.vue')['default']

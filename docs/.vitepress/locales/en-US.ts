@@ -81,6 +81,10 @@ export default defineConfig({
             {
               link: '/en-US/component/popup',
               text: 'Popup'
+            },
+            {
+              link: '/en-US/component/toast',
+              text: 'Toast'
             }
           ]
         },

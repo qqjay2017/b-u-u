@@ -1,0 +1,134 @@
+@import './../common/abstracts/_mixin.scss';
+@import './../common/abstracts/variable.scss';
+
+
+// 仅包含 check-circle(e6f6)、error-circle(e6f8)、info-circle(e6f1) 三个图标的子集字体
+@font-face {
+  font-family: 'toast-icons';
+  src: url('data:font/woff2;base64,d09GMgABAAAAAAKkAAsAAAAABNgAAAJZAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHCoGYABECoNkg2wBNgIkAwoLCgAEIAWBNAcgGxEEAB6D424jymKyxIL++82OgNqP/Z6gmsiqocB0MU2FhHdCJAazryG/6f3TV1sRPwKWnrR1ozeQ0e297NWaX/b4f3+qZix8F/CtAbAxKbF4zoflQl8wwAHaQPHZ1iowpg4rEVW3udnRUyKaYh0dVUCldp3iZH5pLTA/YzaKgKMMBQYAyFm4BCXEc+0nwIVeP/wVHQyJShJ939RBHgTO1N/qOr1YL+lRHwJYUfAUN0uCQDb4knLlIt/fauoYNis5WTqZOpl0w/OGlKMKd4QMaANkSW6x09VtdtDXaHsIp7DQh1fCcJ0cemtlPtqX0IdCvZf6cEkNAozDvIl25abScMNyda9MVnsnU6SV0k+lVp8i/GIEtVcygqdMfoLJsJKUBuEy6jqa5y5EIOb420wdkzhnAiqLjHY0FUpJgVLRv1Q0BYJS0NS/08/WO+XEEKNxuGhizBsxBhcdjYshvuEfCBEtKy3Tm85kZAJmj3dVZ9d8zuZCTldXzsJmznxXZ5W3asC036kxjUpNa3TqNx247oSTRkqTPAWa6e7aMbcS83Z2XGVlHHvZsjZoSTg4XoQrHU32/3ry8JiefqqvB54p88Ep+i0jk5GfUWZ4IDFQnKXzlAVAceiTZ1O0EHj4779Lt0j9LzfJ4K3IegMjMU3Rk511+gHlIgj8xHAtO1VgmqJdJuT44MjhHtSBiEqVKABAmRU6Qq5AOxCCeu1CVGscTTk0UyjRatIoZXZCPRhTo6eEeNrRpj3GJiaCJBu1gISt8Q2qwVBNBJjq4cDqNeBWfLGnIf0GJUAlAw==') format('woff2'),
+    url('data:font/woff;base64,d09GRgABAAAAAAQIAAsAAAAABNgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAAD3AAAACkAAAAquPq49E9TLzIAAALcAAAARAAAAGA9B0nIY21hcAAAAyAAAAA0AAAAROcLzlNnbHlmAAABCAAAAUIAAAHir1IlR2hlYWQAAAJ4AAAANgAAADYtyWlWaGhlYQAAArwAAAAgAAAAJAf3A5lobXR4AAACsAAAAAoAAAAKBAAAAGxvY2EAAAJsAAAACgAAAAoBQgCfbWF4cAAAAkwAAAAfAAAAIAEdAaxuYW1lAAADVAAAAHcAAAC0CaYlhXBvc3QAAAPMAAAAEAAAACAADQAAeJxjYGFg+H+A+SCzI4MIgyaDLoMhAwOrkrqaupqJuZm5mZG4mLiYCDsbOxujCUhQCcQUAQkagaQZRZVNxY0FlZkYqjJSbWxtbVIzvsAYjGwmxuFRF6LCjU3gjH/LfNgcHBxQ1IEZjAcyUBSCGIwZvr4L/i1gYAa6cDfYhcIMWgwGDAzCdkxGckwibECnsOmxmDGamZmaqKnrMbHzMbOzyTEZG5kxizOqm4snKdcu2by0zsWlLsiupbk0zk6Kl+mYuZWiglb9VB+LlEAzbkGtvDlhPn3quv8eLNAtZtIJAileunlJrbIkr5RdXGlzy79ms14fy1x9h1A5fm6zwBSL0OWtXtaMTyE6GLCEHiMizBDhyIgIM0Q4sgoaC7Ibi2INvX+/MEOPMcHB3deXGUvw/XPADL4TjAn/Fjj4MgAACz1/DgAAeJxjYGRgYGBhXMDAzwACTEDMBYQMDP/BfAYAGckBywAAAAAAAFEAnwDxAAAAAQAAAAEAALnfGslfDzz1CAsEAAAAAADhSRKsAAAAAOFJEqz//v9/BBoDggAAAAgAAgAAAAAAAAQAAAAAAAAAAAAAAHicY2BkYGBu+N/AEMMi+f/f/38sUgxAERTACACk4AaXeJxjYGFhYJzAwMrAwNTJdIaBgaEfQjO+ZjBi5ACKMrAyM2AFAWmuKQwHnn189oO54X8DAwPzHYZGoDAjiiImAJubDkp4nGNgYGBiYGBgBmIRIMkIplkYDIA0BxAC5Z59fPbt2Y///xEsSQFJHklusFowAACdLhAJeJxNizEOglAQBQcBiQ2hoqayg2DjBfQEFBR0gkpICCZfDOH2vnwIodiXebO7QECFi+OdgLNmYYdIbeEDIdeV3Z33duwTc1/5aP0Nw4sHo/JJQs2s7Gj4MPC2OTJpl272S6Hrlh+9Pg2lmpHt7DbhQkb+B1XXE0gAeJxjYGaAAC4GrAAAAWMADnicY2BkYGDgYlBj0GBgcnHzCWHgy0ksyWOQYGABijP8/88ABwBtlwVdAAAA') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wd-icon {
+    display: inline-block;
+  font-family: 'toast-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    &::before {
+    display: inline-block;
+  }
+
+
+}
+.wd-icon-check-circle:before {
+  content: "\e6f6";
+}
+
+
+
+.wd-icon-error-circle:before {
+  content: "\e6f8";
+}
+
+
+
+
+
+.wd-icon-info-circle:before {
+  content: "\e6f1";
+}
+
+
+
+.wot-theme-dark {
+  @include b(toast) {
+    @include e(content) {
+      background: $-dark-background4;
+      color: $-dark-color;
+    }
+  }
+}
+
+@include b(toast) {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  pointer-events: none;
+
+  @include e(content) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 80vw;
+    border-radius: 16rpx;
+    background: rgba(0, 0, 0, 0.75);
+    color: $-color-white;
+    font-size: 28rpx;
+    line-height: 1.5;
+
+    // 不带 icon：固定宽度长方形
+    width: 400rpx;
+    padding: 32rpx 48rpx;
+
+    // 带 icon：短文字等宽正方形，长文字自动变长方形
+    &.is-with-icon {
+      width: auto;
+      min-width: 240rpx;
+      min-height: 240rpx;
+      padding: 32rpx;
+    }
+  }
+
+  @include e(icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 16rpx;
+    font-size: 60rpx;
+
+    &--success {
+      color: $-color-success;
+    }
+
+    &--error {
+      color: $-color-danger;
+    }
+
+    &--info {
+      color: $-color-info;
+    }
+  }
+
+  @include e(icon-svg) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    font-size: 48rpx;
+    font-weight: $-fw-semibold;
+    line-height: 1;
+  }
+
+  @include e(message) {
+    text-align: center;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+}
+
+

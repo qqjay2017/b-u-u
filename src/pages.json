@@ -134,6 +134,16 @@
             },
             "navigationBarTitleText": "ActionSheet 动作面板"
           }
+        },
+        {
+          "path": "toast/Index",
+          "name": "toast",
+          "style": {
+            "mp-alipay": {
+              "allowsBounceVertical": "NO"
+            },
+            "navigationBarTitleText": "Toast 轻提示"
+          }
         }
       ]
     }

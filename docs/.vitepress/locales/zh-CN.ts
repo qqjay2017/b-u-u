@@ -81,6 +81,10 @@ export default defineConfig({
             {
               link: '/component/popup',
               text: 'Popup 弹出层'
+            },
+            {
+              link: '/component/toast',
+              text: 'Toast 轻提示'
             }
           ]
         },
