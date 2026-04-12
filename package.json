@@ -120,7 +120,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "@vueuse/core": "^12.0.0",
-    "axios": "^1.7.9",
+    "axios": "^1.15.0",
     "components-helper": "^2.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
